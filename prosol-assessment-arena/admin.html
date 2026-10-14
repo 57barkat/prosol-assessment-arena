@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Control</title>
+  <link rel="stylesheet" href="assest/css/styles.css">
+</head>
+
+<body data-page="admin">
+  <div class="shell">
+    <header class="header appHeader">
+      <div class="brandRow">
+        <div class="logoBox"><img class="logo" src="assest/img/logo.png" alt="ProSol Consulting logo"></div>
+        <div>
+          <p class="kicker">Trainer Dashboard</p>
+          <h1 class="title compactTitle">Admin Control</h1>
+          <p class="subtitle compactSubtitle">Set quiz rules, monitor submissions and control what appears on the main
+            console.</p>
+        </div>
+      </div>
+      <nav class="nav"><a href="index.html">Home</a><a href="participant.html">Participant</a><a
+          href="console.html">Main Console</a><button class="modeBtn" id="themeBtn">Dark mode</button></nav>
+    </header>
+
+    <div id="adminLogin" class="panel login">
+      <span class="badge">Admin security</span>
+      <h2>Admin login</h2>
+      <p class="subtitle">Enter the server-configured password to manage quiz settings and score release.</p>
+      <div class="stack" style="margin-top:18px"><input id="adminPass" type="password" class="input"
+          placeholder="Admin password"><button id="adminLoginBtn" class="btn">Login</button>
+      </div>
+    </div>
+
+    <main id="adminArea" class="stack hidden">
+      <section class="grid grid4">
+        <div class="metric"><span>Total participants</span><strong id="mParticipants">0</strong></div>
+        <div class="metric"><span>Submitted</span><strong id="mSubmitted">0</strong></div>
+        <div class="metric"><span>Questions per quiz</span><strong id="mQuizSize">5</strong></div>
+        <div class="metric"><span>Duration</span><strong id="mDuration">3m</strong></div>
+      </section>
+
+      <section class="panel adminSettings">
+        <span class="badge">Quiz setup</span>
+        <h2>Timing and question controls</h2>
+        <p class="small">These settings apply to new participant attempts. Default sample mode is 5 questions in 3
+          minutes.</p>
+        <div class="settingsGrid" style="margin-top:14px">
+          <label>Questions per participant<input id="settingQuestionCount" class="input" type="number" min="1" max="100"
+              step="1"></label>
+          <label>Quiz duration in minutes<input id="settingDuration" class="input" type="number" min="1" max="60"
+              step="1"></label>
+          <button id="saveSettingsBtn" class="btn">✓ Save settings</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <span class="badge">Admin actions</span>
+        <h2>Console and data control</h2>
+        <div class="btnRow" style="margin-top:12px"><button id="releaseBtn" class="btn green">Release scores to main
+            console</button><button id="hideBtn" class="btn amber">Hide scores</button><button id="resetBtn"
+            class="btn red">Reset all quiz data</button><button id="exportBtn" class="btn secondary">Export results
+            JSON</button></div>
+      </section>
+
+      <section class="grid grid2">
+        <div class="panel"><span class="badge">Group scores</span>
+          <h2>Group ranking</h2>
+          <div id="groupResults"></div>
+        </div>
+        <div class="panel"><span class="badge">Participants</span>
+          <h2>Submission list</h2>
+          <div id="participantResults"></div>
+        </div>
+      </section>
+      <section class="panel"><span class="badge">Answer review</span>
+        <h2>Submitted answers</h2>
+        <p class="small">Visible to admin only.</p>
+        <div id="answerReview"></div>
+      </section>
+    </main>
+  </div>
+  <div class="floatingToast" id="toast"></div>
+
+  <script src="assest/js/questions.js"></script>
+  <script src="assest/js/app.js"></script>
+</body>
+
+</html>
