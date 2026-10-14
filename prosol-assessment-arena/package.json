@@ -1,0 +1,9 @@
+{
+  "name": "prosol-assessment-arena",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ProSol Assessment Arena with shared JSON-file submissions",
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  }
+}

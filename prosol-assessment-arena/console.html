@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Main Console</title>
+  <link rel="stylesheet" href="assest/css/styles.css">
+</head>
+
+<body data-page="console">
+  <div class="shell consoleShell">
+    <header class="header simpleHeader appHeader">
+      <div class="brandRow">
+        <div class="logoBox"><img class="logo" src="assest/img/logo.png" alt="ProSol Consulting logo"></div>
+        <div>
+          <p class="kicker">Main Console</p>
+          <h1 class="title compactTitle">Assessment Console</h1>
+          <p class="subtitle compactSubtitle">Guidelines, group submission status and admin-approved scores.</p>
+        </div>
+      </div>
+      <button class="modeBtn" id="themeBtn">Dark mode</button>
+    </header>
+    <main class="stack consoleFit">
+      <section class="grid grid2">
+        <div class="panel"><span class="badge">Guidelines</span>
+          <h2>Participant instructions</h2>
+          <ul class="subtitle guidelineList">
+            <li>Enter your name and select your assigned group.</li>
+            <li>Answer the questions before your personal timer ends.</li>
+            <li>Use Next, Previous and Review to manage your attempt.</li>
+            <li>Scores appear here only after admin approval.</li>
+          </ul>
+        </div>
+        <div class="panel"><span class="badge">Submission status</span>
+          <h2>Live group progress</h2>
+          <div id="consoleStatus"></div>
+        </div>
+      </section>
+      <section id="lockedPanel" class="panel lockedPanel"><span class="badge">Scores hidden</span>
+        <h2>Waiting for admin approval</h2>
+        <p class="subtitle">Group scores will appear here when the trainer releases them from the admin control screen.
+        </p>
+      </section>
+      <section id="resultsPanel" class="hidden panel"><span class="badge">Released scores</span>
+        <h2>Final group ranking</h2>
+        <div id="consoleGroups"></div>
+      </section>
+    </main>
+  </div>
+  <script src="assest/js/questions.js"></script>
+  <script src="assest/js/app.js"></script>
+</body>
+
+</html>
