@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Participant Quiz</title>
+  <link rel="stylesheet" href="assest/css/styles.css">
+</head>
+
+<body data-page="participant">
+  <div class="shell participantShell">
+    <header class="header simpleHeader appHeader">
+      <div class="brandRow">
+        <div class="logoBox"><img class="logo" src="assest/img/logo.png" alt="ProSol Consulting logo"></div>
+        <div>
+          <p class="kicker">Participant Screen</p>
+          <h1 class="title compactTitle">Participant Quiz</h1>
+          <p class="subtitle compactSubtitle">Enter your details. Your individual timer starts when you press Start.</p>
+        </div>
+      </div>
+      <button class="modeBtn" id="themeBtn">Dark mode</button>
+    </header>
+
+    <div id="participantLogin" class="panel login refinedLogin">
+      <span class="badge">Participant entry</span>
+      <h2>Join your group quiz</h2>
+      <p class="subtitle">Select your assigned group and begin. The timer is personal to your attempt.</p>
+      <div class="stack" style="margin-top:18px">
+        <label>Your name<input id="participantName" class="input" placeholder="Enter participant name"></label>
+        <label>Assigned group<select id="participantGroup" class="input">
+            <option>Group 1</option>
+            <option>Group 2</option>
+            <option>Group 3</option>
+            <option>Group 4</option>
+            <option>Group 5</option>
+          </select></label>
+        <button id="startQuizBtn" class="btn">▶ Start quiz</button>
+      </div>
+    </div>
+
+    <main id="quizArea" class="hidden quizLayout">
+      <div class="floatingTimerBox"><span>Time left</span><strong id="timeLeftText">03:00</strong><small
+          id="quizMetaText">Group</small></div>
+      <section class="panel questionBox mainQuestionPanel">
+        <div class="qHead">
+          <div><span class="badge" id="questionBadge">Question</span><span class="small bankId" id="questionId"></span>
+          </div>
+          <span class="small" id="categoryText">Category</span>
+        </div>
+        <p class="qText" id="questionText"></p>
+        <div class="optionGrid" id="optionsGrid"></div>
+        <div class="participantControls">
+          <button id="prevBtn" class="btn secondary">← Previous</button>
+          <button id="reviewBtn" class="btn amber">☷ Review</button>
+          <button id="nextBtn" class="btn">Next →</button>
+          <button id="submitBtn" class="btn green" disabled>Submit quiz</button>
+        </div>
+        <p class="small submitHint" id="attemptNote">Submit unlocks after answering at least 70% of questions.</p>
+      </section>
+      <aside class="panel reviewPanel" id="reviewPanel">
+        <div class="reviewPanelHead">
+          <div><span class="badge">Review</span>
+            <h2>Question navigator</h2>
+          </div>
+          <button class="btn secondary smallBtn" id="closeReviewBtn">Close</button>
+        </div>
+        <p class="small">Coloured tiles are answered. Select any tile to revisit that question.</p>
+        <div class="reviewGrid" id="reviewGrid" style="margin-top:14px"></div>
+      </aside>
+    </main>
+  </div>
+  <div class="floatingToast" id="toast"></div>
+  <script src="assest/js/questions.js"></script>
+  <script src="assest/js/app.js"></script>
+</body>
+
+</html>
