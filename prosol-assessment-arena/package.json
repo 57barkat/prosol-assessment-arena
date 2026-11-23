@@ -4,6 +4,6 @@
   "private": true,
   "description": "ProSol Assessment Arena with shared JSON-file submissions",
   "scripts": {
-    "start": "node init && node --env-file=.env server.js"
+    "start": "node --env-file=.env server.js"
   }
 }
